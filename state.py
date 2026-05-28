@@ -1,4 +1,5 @@
 from datetime import datetime
 
-last_seen_time = datetime.now()
 face_present = False
+last_seen_time = datetime.now()
+consecutive_missing_frames = 0

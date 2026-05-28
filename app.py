@@ -5,16 +5,16 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Face Monitoring API Running"}
+    return {"message": "Face Presence Detection API Running"}
 
 @app.get("/status")
 def status():
     try:
         with open("output.json", "r") as f:
-            data = json.load(f)
-        return data
+            return json.load(f)
     except:
         return {
             "face_present": False,
-            "duration_absent_sec": -1
+            "duration_absent_sec": -1,
+            "alert": False
         }
